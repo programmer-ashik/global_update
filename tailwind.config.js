@@ -10,6 +10,16 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: '#182747',
+        hero: "#D8D8D8",
+        hero_p: "#9DB2BF",
+        btn: '#4C3BCF'
+      },
+      boxShadow: {
+        spotlight: "50px 50px 20px rgba(180, 251, 147, 0.2)",
+      },
+      backgroundImage: {
+        'dynamic-radial': `radial-gradient(circle at calc(var(--x) * 1px) calc(var(--y) * 1px), hsl(0, 10%, 100% / 1.5), transparent 150px)`,
       },
     },
   },
