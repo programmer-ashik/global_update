@@ -3,10 +3,10 @@ import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import {
     Bars3Icon,
     MagnifyingGlassIcon,
-    QuestionMarkCircleIcon,
     ShoppingBagIcon,
-    XMarkIcon,
+    XMarkIcon
 } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Fragment, useState } from 'react'
 const navigation = {
@@ -176,10 +176,6 @@ function classNames(...classes) {
 
 export default function Navabr() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    if (mobileMenuOpen) {
-
-    }
-
     return (
         <div className=" ">
             {/* Mobile menu */}
@@ -278,7 +274,7 @@ export default function Navabr() {
                                         <div className="hidden lg:flex lg:flex-1 lg:items-center">
                                             <Link href="/">
                                                 <span className="sr-only">Your Company</span>
-                                                <img
+                                                <Image width={100} height={100}
                                                     className="h-32 w-auto"
                                                     src={'/logo3.png'}
                                                     alt="logo"
@@ -292,14 +288,14 @@ export default function Navabr() {
                                                 <div className="flex h-full justify-center space-x-8">
                                                     {navigation.categories.map((category) => (
                                                         <Popover key={category.name} className="flex">
-                                                            {({ open }) => (
+                                                            {({ mobileMenuOpen }) => (
                                                                 <>
                                                                     <div className="relative flex">
                                                                         <Popover.Button className=" outline-none relative z-10 flex items-center justify-center text-sm font-medium text-gray-300 transition-colors duration-200 ease-out">
                                                                             {category.name}
                                                                             <span
                                                                                 className={classNames(
-                                                                                    open ? ' transition-color duration-1500 delay-200 ease-out' : '',
+                                                                                    mobileMenuOpen ? ' transition-color duration-1500 delay-200 ease-out' : '',
                                                                                     'absolute inset-x-0 -bottom-px h-0.5 transition duration-200 ease-out'
                                                                                 )}
                                                                                 aria-hidden="true"
@@ -371,7 +367,7 @@ export default function Navabr() {
                                         {/* Logo (lg-) */}
                                         <Link href="/" className="lg:hidden">
                                             <span className="sr-only">Your Company</span>
-                                            <img src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="" className="h-8 w-auto" />
+                                            <Image width={100} height={100} src="/logo3.png" alt="" className="h-32 w-auto" />
                                         </Link>
 
                                         <div className="flex flex-1 items-center justify-end">
@@ -380,16 +376,6 @@ export default function Navabr() {
                                             </Link>
 
                                             <div className="flex items-center lg:ml-8">
-                                                {/* Help */}
-                                                <Link href="#" className="p-2 text-white lg:hidden">
-                                                    <span className="sr-only">Help</span>
-                                                    <QuestionMarkCircleIcon className="h-6 w-6" aria-hidden="true" />
-                                                </Link>
-                                                <Link href="#" className="hidden text-sm font-medium text-white lg:block">
-                                                    Help
-                                                </Link>
-
-                                                {/* Cart */}
                                                 <div className="ml-4 flow-root lg:ml-8">
                                                     <Link href="#" className="group -m-2 flex items-center p-2">
                                                         <ShoppingBagIcon className="h-6 w-6 flex-shrink-0 text-white" aria-hidden="true" />

@@ -1,3 +1,4 @@
+import Image from "next/image"
 
 const Contact = () => {
   return (
@@ -120,7 +121,7 @@ const Contact = () => {
             </p>
           </form>
           <div className="lg:mt-6 lg:w-80 lg:flex-none">
-            <img className="h-12 w-auto" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" alt="" />
+            <Image width={100} height={100} className="h-32 w-auto" src="/logo3.png" alt="" />
             <figure className="mt-10">
               <blockquote className="text-lg font-semibold leading-8 text-hero">
                 <p>
@@ -129,7 +130,7 @@ const Contact = () => {
                 </p>
               </blockquote>
               <figcaption className="mt-10 flex gap-x-6">
-                <img
+                <Image width={100} height={100}
                   src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=96&h=96&q=80"
                   alt=""
                   className="h-12 w-12 flex-none rounded-full bg-gray-50"

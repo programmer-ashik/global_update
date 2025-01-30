@@ -1,5 +1,6 @@
 
 import Reviews from '@/app/components/Reviews/Reviews';
+import Image from 'next/image';
 const collections = [
     {
         "id": "1",
@@ -214,9 +215,9 @@ const Product = ({ params }) => {
     const { title, id, categories, special_Price, regular_Price, img, reviews, productId, quick_overview, specifications } = data;
 
     return (
-        <div className=' grid grid-cols-1 sm:grid-cols-2 gap-2 pt-16'>
-            <div className=" w-full min-h-screen ">
-                <img className=' w-full h-full  object-cover' src={img} />
+        <div className=' w-full h-full grid grid-cols-1 sm:grid-cols-2 gap-2 py-16 px-8'>
+            <div className=" relative w-full h-[500px] sm:h-full ">
+                <Image fill className='object-cover' src={img} />
             </div>
             <div className="flex flex-col gap-4 p-4 px-3">
                 {/* details */}
@@ -239,13 +240,7 @@ const Product = ({ params }) => {
                 <div className="w-[200px] h-[35px] px-4 bg-green-600 text-white flex justify-center items-center rounded-md">
                     Avalaible
                 </div>
-                {/* Quick views */}
-                {/*  "display": "21.5",
-            "display_Resolution": "1920x1080",
-            "panel_Type": "IPS",
-            "refresh": "75Hz",
-            "rotatable": "No",
-            "Port": "HDMI Port", */}
+
                 <div className="flex flex-col text-hero">
                     <h1 className=' text-lg font-bold py-3'>Quick Overview</h1>
                     <ol className=' space-y-2'>

@@ -11,8 +11,11 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: '#182747',
+        // primary: '#7BD3EA',
         hero: "#D8D8D8",
+        // hero: "#FFB319",
         hero_p: "#9DB2BF",
+        // hero_p: "#FFE194",
         btn: '#4C3BCF'
       },
       boxShadow: {

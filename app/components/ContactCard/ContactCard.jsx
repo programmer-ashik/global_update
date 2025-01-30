@@ -1,4 +1,5 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
+import Image from 'next/image'
 
 
 
@@ -11,7 +12,14 @@ export default function ContactCards({ people }) {
                     className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
                 >
                     <div className="flex flex-1 flex-col p-8">
-                        <img className="mx-auto h-32 w-32 flex-shrink-0 rounded-full" src={person.imageUrl} alt="" />
+                        <div className="h-32 w-32 mx-auto">
+                            <Image
+                                width={100}
+                                height={100}
+                                className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
+                                src={person.imageUrl} alt="" />
+                        </div>
+
                         <h3 className="mt-6 text-sm font-medium text-gray-900">{person.name}</h3>
                         <dl className="mt-1 flex flex-grow flex-col justify-between">
                             <dt className="sr-only">Title</dt>

@@ -1,4 +1,6 @@
 
+import Image from "next/image"
+
 const stats = [
   { label: 'Transactions every 24 hours', value: '44 million' },
   { label: 'Assets under holding', value: '$119 trillion' },
@@ -45,7 +47,6 @@ const team = [
   },
   // More people...
 ]
-
 export default function About() {
 
   return (
@@ -106,8 +107,9 @@ export default function About() {
                 </div>
                 <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
                   <div className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
-                    <div className="relative">
-                      <img
+                    <div className="relative h-[300px] w-[200px]">
+                      <Image
+                        fill
                         src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
                         alt=""
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
@@ -116,16 +118,18 @@ export default function About() {
                     </div>
                   </div>
                   <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
-                    <div className="relative">
-                      <img
+                    <div className="relative h-[300px] w-[200px]">
+                      <Image
+                        fill
                         src="https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
                         alt=""
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
-                    <div className="relative">
-                      <img
+                    <div className="relative h-[300px] w-[200px]">
+                      <Image
+                        fill
                         src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80"
                         alt=""
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
@@ -134,16 +138,18 @@ export default function About() {
                     </div>
                   </div>
                   <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-                    <div className="relative">
-                      <img
+                    <div className="relative h-[300px] w-[200px]">
+                      <Image
+                        fill
                         src="https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80"
                         alt=""
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                     </div>
-                    <div className="relative">
-                      <img
+                    <div className="relative h-[300px] w-[200px]">
+                      <Image
+                        fill
                         src="https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
                         alt=""
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
@@ -187,7 +193,7 @@ export default function About() {
                   {stats.map((stat) => (
                     <div key={stat.label} className="flex flex-col-reverse gap-y-4">
                       <dt className="text-base leading-7 text-hero_p">{stat.label}</dt>
-                      <dd className="text-5xl font-semibold tracking-tight text-btn">{stat.value}</dd>
+                      <dd className="text-5xl font-semibold tracking-tight text-hero">{stat.value}</dd>
                     </div>
                   ))}
                 </dl>
@@ -197,8 +203,9 @@ export default function About() {
         </div>
 
         {/* Image section */}
-        <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
-          <img
+        <div className="mt-32 relative h-full sm:h-[500px] sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
+          <Image
+            fill
             src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
             alt=""
             className="aspect-[5/2] w-full object-cover xl:rounded-3xl"
@@ -252,35 +259,35 @@ export default function About() {
               {`Trusted by the world’s most innovative teams`}
             </h2>
             <div className=" mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-              <img
+              <Image width={100} height={100}
                 className="col-span-2 max-h-24 w-full object-contain lg:col-span-1"
                 src="https://cdn.worldvectorlogo.com/logos/huawei.svg"
                 alt="Transistor"
                 width={158}
                 height={60}
               />
-              <img
+              <Image width={100} height={100}
                 className="col-span-2 max-h-24 w-full object-contain lg:col-span-1"
                 src="https://logovectorseek.com/wp-content/uploads/2021/05/rosenberger-group-logo-vector.png"
                 alt="Reform"
                 width={158}
                 height={60}
               />
-              <img
+              <Image width={100} height={100}
                 className="col-span-2 max-h-24 w-full object-contain lg:col-span-1"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHJhvsub_gaskGPgA3Vtha9yhLR95BF7826g&s"
                 alt="Tuple"
                 width={158}
                 height={60}
               />
-              <img
+              <Image width={100} height={100}
                 className="col-span-2 max-h-24 w-full object-contain sm:col-start-2 lg:col-span-1"
                 src="https://seeklogo.com/images/B/Bose-logo-D73460CBB7-seeklogo.com.png"
                 alt="SavvyCal"
                 width={158}
                 height={60}
               />
-              <img
+              <Image width={100} height={100}
                 className="col-span-2 col-start-2 max-h-24 w-full object-contain sm:col-start-auto lg:col-span-1"
                 src="data:image/png;base64,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"
                 alt="Statamic"
@@ -306,7 +313,7 @@ export default function About() {
           >
             {team.map((person) => (
               <li key={person.name}>
-                <img className="mx-auto h-24 w-24 rounded-full" src={person.imageUrl} alt="" />
+                <Image width={100} height={100} className="mx-auto h-24 w-24 rounded-full" src={person.imageUrl} alt="" />
                 <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-hero">{person.name}</h3>
                 <p className="text-sm leading-6 text-hero_p">{person.role}</p>
               </li>

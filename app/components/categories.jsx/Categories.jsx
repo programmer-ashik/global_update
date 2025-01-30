@@ -1,38 +1,46 @@
+import Image from "next/image"
 import Link from "next/link"
 
 
 const categories = [
     {
+        id: "1",
         name: 'Monitor',
         href: '#',
         imageSrc: 'https://www.ryans.com/assets/images/category-icon/svg/all-in-one.svg',
     },
     {
+        id: "2",
         name: 'Processor',
         href: '#',
         imageSrc: 'https://www.ryans.com/assets/images/category-icon/svg/Processor.svg',
     },
     {
+        id: "3",
         name: 'Camera',
         href: '#',
         imageSrc: 'https://www.ryans.com/assets/images/category-icon/svg/camera.svg',
     },
     {
+        id: "4",
         name: 'Printer',
         href: '#',
         imageSrc: 'https://www.ryans.com/assets/images/category-icon/svg/printer.svg',
     },
     {
+        id: "5",
         name: 'Software',
         href: '#',
         imageSrc: 'https://www.ryans.com/assets/images/category-icon/svg/software.svg'
     },
     {
+        id: "6",
         name: 'Monitor',
         href: '#',
         imageSrc: 'https://www.ryans.com/assets/images/category-icon/svg/Monitor.svg'
     },
     {
+        id: "7",
         name: 'Sound System',
         href: '#',
         imageSrc: 'https://www.ryans.com/assets/images/category-icon/svg/speaker.svg'
@@ -65,9 +73,10 @@ export default function Categories() {
                         {
                             categories.map(categorie =>
                                 <Link
+                                    key={categorie.id}
                                     className=" flex flex-col gap-4 items-center justify-center"
                                     href={'/'}>
-                                    <img className=" h-12 w-12  sm:h-20 sm:w-20 hover:case-out hover:shadow-md hover:shadow-white rounded-md hover:bg-gray-200 p-1 bg-gray-400
+                                    <Image width={100} height={100} className=" h-12 w-12  sm:h-20 sm:w-20 hover:case-out hover:shadow-md hover:shadow-white rounded-md hover:bg-gray-200 p-1 bg-gray-400
                                     scale-100 hover:scale-125 duration-700" src={categorie.imageSrc} />
                                     <p className="text-gray-300 ">{categorie.name}</p>
 
