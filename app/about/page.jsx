@@ -259,40 +259,40 @@ export default function About() {
               {`Trusted by the world’s most innovative teams`}
             </h2>
             <div className=" mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-              <Image width={100} height={100}
+              <Image height={100}
                 className="col-span-2 max-h-24 w-full object-contain lg:col-span-1"
                 src="https://cdn.worldvectorlogo.com/logos/huawei.svg"
                 alt="Transistor"
                 width={158}
-                height={60}
+
               />
               <Image width={100} height={100}
                 className="col-span-2 max-h-24 w-full object-contain lg:col-span-1"
                 src="https://logovectorseek.com/wp-content/uploads/2021/05/rosenberger-group-logo-vector.png"
                 alt="Reform"
                 width={158}
-                height={60}
+
               />
               <Image width={100} height={100}
                 className="col-span-2 max-h-24 w-full object-contain lg:col-span-1"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHJhvsub_gaskGPgA3Vtha9yhLR95BF7826g&s"
                 alt="Tuple"
                 width={158}
-                height={60}
+
               />
               <Image width={100} height={100}
                 className="col-span-2 max-h-24 w-full object-contain sm:col-start-2 lg:col-span-1"
                 src="https://seeklogo.com/images/B/Bose-logo-D73460CBB7-seeklogo.com.png"
                 alt="SavvyCal"
                 width={158}
-                height={60}
+
               />
               <Image width={100} height={100}
                 className="col-span-2 col-start-2 max-h-24 w-full object-contain sm:col-start-auto lg:col-span-1"
                 src="data:image/png;base64,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"
                 alt="Statamic"
                 width={158}
-                height={60}
+
               />
             </div>
           </div>
