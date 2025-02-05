@@ -50,7 +50,7 @@ const team = [
 export default function About() {
 
   return (
-    <div className=" bg-primary text-hero">
+    <div className=" bg-[url('/wavey-fingerprint.svg')] text-hero">
 
       <main className="isolate py-12">
         {/* Hero section */}

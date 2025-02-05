@@ -82,13 +82,11 @@ export default function OurProjects() {
   // const collections = collections;
 
   return (
-    <div className=" w-full min-h-fit bg-primary py-16 px-2 lg:px-8 space-y-3 ">
+    <div className=" w-full min-h-fit bg-[url('/wavey-fingerprint.svg')] py-16 px-2 lg:px-8 space-y-3 ">
       {/* banner project  */}
       {
         projects.map((project, index) =>
           index % 2 === 0 ? < ProjectCard key={project.id} project={project} /> : <ProjectOdd key={project.id} project={project} />
-
-
         )
       }
     </div>

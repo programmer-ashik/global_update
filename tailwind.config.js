@@ -24,6 +24,10 @@ module.exports = {
       backgroundImage: {
         'dynamic-radial': `radial-gradient(circle at calc(var(--x) * 1px) calc(var(--y) * 1px), hsl(0, 10%, 100% / 1.5), transparent 150px)`,
       },
+      fontFamily: {
+        lilita: ["Lilita One", "cursive"],
+        prompt: ["Prompt", "sans-serif"],
+      },
     },
   },
   plugins: [],

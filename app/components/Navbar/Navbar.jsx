@@ -16,29 +16,29 @@ const navigation = {
             featured: [
                 {
                     name: 'CCTV Camera',
-                    href: '#',
+                    href: 'cctv_camera',
                 },
                 {
                     name: 'IP Phone',
-                    href: '#',
+                    href: 'ip_phone',
                     imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg',
                     imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
                 },
                 {
                     name: 'IP Camera',
-                    href: '#',
+                    href: 'ip_camera',
                     imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-03.jpg',
                     imageAlt: 'Model wearing minimalist watch with black wristband and white watch face.',
                 },
                 {
                     name: 'Access Control Accessories',
-                    href: '#',
+                    href: 'accessories',
                     imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-04.jpg',
                     imageAlt: 'Model opening tan leather long wallet with credit card pockets and cash pouch.',
                 },
                 {
                     name: 'Home Security',
-                    href: '#',
+                    href: 'home_security',
                     imageSrc: 'https://tailwindui.com/img/ecommerce-images/mega-menu-category-04.jpg',
                     imageAlt: 'Model opening tan leather long wallet with credit card pockets and cash pouch.',
                 },
@@ -166,7 +166,7 @@ const navigation = {
     ],
     pages: [
         { name: 'Our Project', href: '/our_projects' },
-        { name: 'About', href: '/about' },
+        { name: 'About Us', href: '/about' },
     ],
 }
 
@@ -176,6 +176,7 @@ function classNames(...classes) {
 
 export default function Navabr() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [activeCategory, setActiveCategory] = useState(null);
     return (
         <div className=" ">
             {/* Mobile menu */}
@@ -225,7 +226,7 @@ export default function Navabr() {
                                                     key={category.name}
                                                     className={({ selected }) =>
                                                         classNames(
-                                                            selected ? 'border-none shadow-lg rounded-lg' : ' border-transparent text-gray-300',
+                                                            selected ? 'border-none shadow-lg rounded-lg text-orange-400' : ' border-transparent text-gray-300',
                                                             'flex-1 whitespace-nowrap border-b-2 px-2 py-2 text-base font-medium'
                                                         )
                                                     }
@@ -233,12 +234,30 @@ export default function Navabr() {
                                                     {category.name}
                                                 </Tab>
                                             ))}
+                                            {navigation.pages.map((page) => (
+                                                <Link
+                                                    key={page.name}
+                                                    href={page.href}>
+                                                    <Tab
+
+                                                        className={({ selected }) =>
+                                                            classNames(
+                                                                selected ? 'border-none shadow-lg rounded-lg text-orange-400' : ' border-transparent text-gray-300',
+                                                                'flex-1 whitespace-nowrap border-b-2 px-2 py-2 text-base font-medium'
+                                                            )
+                                                        }
+                                                    >
+                                                        {page.name}
+                                                    </Tab>
+                                                </Link>
+                                            ))}
                                         </Tab.List>
                                     </div>
                                     {/* tab panle */}
                                     <Tab.Panels as={Fragment}>
                                         {navigation.categories.map((category) => (
                                             <Tab.Panel key={category.name} className="space-y-12 px-4 py-2">
+
                                                 <div className=" grid grid-cols-2 gap-x-2 gap-y-2 text-gray-300">
                                                     {category.featured.map((item) => (
                                                         <div key={item.name} className="group relative">
@@ -250,9 +269,11 @@ export default function Navabr() {
                                                         </div>
                                                     ))}
                                                 </div>
+
                                             </Tab.Panel>
                                         ))}
                                     </Tab.Panels>
+
                                 </Tab.Group>
                             </Dialog.Panel>
                         </Transition.Child>
@@ -286,20 +307,25 @@ export default function Navabr() {
                                             {/* Flyout menus */}
                                             <Popover.Group className="inset-x-0 bottom-0 px-4">
                                                 <div className="flex h-full justify-center space-x-8">
+
                                                     {navigation.categories.map((category) => (
+
                                                         <Popover key={category.name} className="flex">
-                                                            {({ mobileMenuOpen }) => (
+                                                            {({ open }) => (
                                                                 <>
                                                                     <div className="relative flex">
-                                                                        <Popover.Button className=" outline-none relative z-10 flex items-center justify-center text-sm font-medium text-gray-300 transition-colors duration-200 ease-out">
+                                                                        <Popover.Button
+                                                                            onClick={() => setActiveCategory(category.name)}
+                                                                            className={` group px-2 relative  text-sm font-medium transition-colors duration-200 ease-out 
+                                                                             ${activeCategory === category.name || open
+                                                                                    ? "text-orange-400 border-none ring-0 outline-0 "
+                                                                                    : "text-gray-300 hover:text-orange-400  "
+                                                                                }`}
+                                                                        >
                                                                             {category.name}
                                                                             <span
-                                                                                className={classNames(
-                                                                                    mobileMenuOpen ? ' transition-color duration-1500 delay-200 ease-out' : '',
-                                                                                    'absolute inset-x-0 -bottom-px h-0.5 transition duration-200 ease-out'
-                                                                                )}
-                                                                                aria-hidden="true"
-                                                                            />
+                                                                                className={`absolute top-0 inset-0 w-full rounded-md border-b-[1px] border-b-orange-400 scale-x-0 origin-left transition-transform duration-500 ease-out group-hover:scale-x-100 group-focus:scale-x-100`}
+                                                                            ></span>
                                                                         </Popover.Button>
                                                                     </div>
 
@@ -313,15 +339,13 @@ export default function Navabr() {
                                                                         leaveTo="opacity-0"
                                                                     >
                                                                         <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
-                                                                            {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                                                                             <div className="absolute inset-0 bg-primary shadow" aria-hidden="true" />
-
                                                                             <div className="relative bg-primary opacity-90">
                                                                                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                                                                                     <div className="grid grid-flow-row grid-cols-4 gap-x-2 gap-y-4 py-4">
                                                                                         {category.featured.map((item) => (
                                                                                             <div key={item.name} className="group relative">
-                                                                                                <Link href={item.href} className=" block font-medium hover:text-gray-400 text-white">
+                                                                                                <Link href={`/categoryProducts/${item.href}`} className="block font-medium hover:text-gray-400 text-white">
                                                                                                     <span className="absolute inset-0 z-10" aria-hidden="true" />
                                                                                                     {item.name}
                                                                                                 </Link>
@@ -341,9 +365,17 @@ export default function Navabr() {
                                                         <Link
                                                             key={page.name}
                                                             href={page.href}
-                                                            className="flex items-center text-sm font-medium text-white"
+                                                            onClick={() => setActiveCategory(page.name)}
+                                                            className={` group relative z-10 px-2 flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out 
+                                                            ${activeCategory === page.name
+                                                                    ? "text-orange-400 border-none ring-0 outline-0 px-2"
+                                                                    : "text-gray-300 hover:text-orange-400 "
+                                                                }`}
                                                         >
                                                             {page.name}
+                                                            <span
+                                                                className={`absolute top-0 inset-0 w-full rounded-md border-b-[1px] border-b-orange-400 scale-x-0 origin-left transition-transform duration-500 ease-out group-hover:scale-x-100 group-focus:scale-x-100 px-2`}
+                                                            ></span>
                                                         </Link>
                                                     ))}
                                                 </div>

@@ -210,11 +210,16 @@ const Collections = () => {
 
 
     return (
-        <div className=' lg:px-12 md:px-8 px-4 py-4 md:py-8 w-full h-full bg-primary space-y-6 space-x-4'>
-            {/* <div className=" pt-10">
-                <BorderStyle />
-            </div> */}
-            <div className="grid grid-cols-2 sm:grid-cols-6 gap-2">
+        <div id='products' className=' lg:px-12 md:px-8 px-4 py-4 md:py-8 w-full h-full space-y-6 space-x-4'>
+            <div>
+                <div className="h-8 w-[170px] bg-hero text-primary rounded-tr-[400px] flex  items-center px-8">
+                    <p>Collections</p>
+                </div>
+
+                <div className="h-[4px] w-full bg-hero "></div>
+
+            </div >
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {
                     collections.map(prod => <CollectionsCard key={prod.id} product={prod} />)
                 }

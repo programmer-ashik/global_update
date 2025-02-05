@@ -45,6 +45,14 @@ module.exports = {
                 protocol: 'https',
                 hostname: 'tailwindui.com',
             },
+            {
+                protocol: 'https',
+                hostname: 'www.startech.com.bd',
+            },
+            {
+                protocol: 'https',
+                hostname: 'tailwindui.com',
+            },
         ],
     },
 }

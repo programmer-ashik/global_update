@@ -6,9 +6,9 @@ import Categories from "./components/categories.jsx/Categories.jsx";
 
 export default function Home() {
   return (
-    <div className=" max-w-7xl min-h-screen bg-primary ">
+    <div className=" max-w-7xl min-h-screen bg-[url('/wavey-fingerprint.svg')] ">
       <Banner />
-      <div style={{ backgroundImage: `url('/Hexagon.svg')` }} className=" bg-primary ">
+      <div style={{ backgroundImage: `url('/card.svg')` }} className=" bg-primary bg-cover ">
         <Categories />
         <FutureCard />
       </div>

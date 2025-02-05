@@ -23,7 +23,7 @@ const Footer = () => {
   }
   return (
     <footer className=" bg-cover">
-      <div className=" bg-[#040D12] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 bg-opacity-55">
+      <div className=" bg-[url('/footer_wave.svg')] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 bg-opacity-55">
         <div className="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="grid grid-cols-3  justify-center gap-8 xl:col-span-2">
             {/*  1st */}
