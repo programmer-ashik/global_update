@@ -1,5 +1,6 @@
 import Banner from "./components/Banner/Banner"
 import Collections from "./components/Collections/Collections"
+import FutureCard from "./components/FutureCard/FutureCard"
 import TeamSections from "./components/Team/TeamSections"
 import Categories from "./components/categories.jsx/Categories"
 
@@ -10,6 +11,7 @@ const Home = () => {
             <Banner />
             <Categories />
             <Collections />
+            <FutureCard />
             <TeamSections />
         </div>
     )

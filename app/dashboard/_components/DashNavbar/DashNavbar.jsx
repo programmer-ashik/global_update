@@ -1,9 +1,12 @@
+"use client"
 import { dashBoardMenu } from "@/utils/dashBaordmenu";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { IoIosLogOut } from "react-icons/io";
 const DashNavbar = () => {
     const dashMenu = dashBoardMenu;
-
+    const pathName = usePathname()
+    console.log(pathName);
     return (
         <div className="flex flex-col items-start gap-4">
             {

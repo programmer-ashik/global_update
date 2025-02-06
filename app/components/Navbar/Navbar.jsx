@@ -261,7 +261,7 @@ export default function Navbar() {
                                                 <div className=" grid grid-cols-2 gap-x-2 gap-y-2 text-gray-300">
                                                     {category.featured.map((item) => (
                                                         <div key={item.name} className="group relative">
-                                                            <Link href={item.href} className="mt-2 block text-sm font-medium hover:text-blue-700 text-gray-300">
+                                                            <Link href={`/categoryProducts/${item.href}`} className="mt-2 block text-sm font-medium hover:text-blue-700 text-gray-300">
                                                                 <span className="absolute inset-0 z-10" aria-hidden="true" />
                                                                 {item.name}
                                                             </Link>

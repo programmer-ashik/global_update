@@ -1,3 +1,4 @@
+import { FaHandshakeSimple } from "react-icons/fa6";
 import { GrUserAdmin } from "react-icons/gr";
 import { MdCategory, MdDashboardCustomize, MdProductionQuantityLimits } from "react-icons/md";
 import { PiMicrosoftTeamsLogoFill } from "react-icons/pi";
@@ -38,6 +39,12 @@ export const dashBoardMenu = [
         title: "Banner",
         path: "/dashboard/banner",
         icon: <RiSlideshow2Fill />
+    },
+    {
+        id: "7",
+        title: "Partner",
+        path: "/dashboard/partner",
+        icon: <FaHandshakeSimple />
     },
 
 ]
