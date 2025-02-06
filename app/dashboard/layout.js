@@ -1,3 +1,4 @@
+import DashNavbar from "./_components/DashNavbar/DashNavbar";
 
 export const metadata = {
     title: "DashBoard",
@@ -6,9 +7,13 @@ export const metadata = {
 
 export default function DashboardLayout({ children }) {
     return (
-        <div className="dashboard-layout py-10">
-            <aside>Dashboard Sidebar</aside>
-            <main>{children}</main>
+        <div className=" min-w-7xl grid grid-cols-12 bg-[#000000] text-[#FFD369] min-h-screen py-10 px-2">
+            <div className="col-span-2 pt-4">
+                <DashNavbar />
+            </div>
+            <div className="col-span-10 min-h-screen">
+                <main>{children}</main>
+            </div>
         </div>
     );
 }

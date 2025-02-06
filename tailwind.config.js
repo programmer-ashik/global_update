@@ -11,6 +11,7 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: '#182747',
+        dash: "#FFD369",
         // primary: '#7BD3EA',
         hero: "#D8D8D8",
         // hero: "#FFB319",

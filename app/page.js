@@ -6,7 +6,7 @@ import Categories from "./components/categories.jsx/Categories"
 
 const Home = () => {
     return (
-        <div>
+        <div className=" bg-[url('/wavey-fingerprint.svg')]">
             <Banner />
             <Categories />
             <Collections />

@@ -10,7 +10,7 @@ export default function LayoutContent({ children }) {
     const isDashboard = pathname.startsWith("/dashboard");
 
     return (
-        <div className="relative max-w-7xl mx-auto bg-primary">
+        <div className="relative max-w-7xl mx-auto">
             {!isDashboard && (
                 <div className="fixed top-0 z-10 w-full">
                     <Navbar />
