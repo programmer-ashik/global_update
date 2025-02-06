@@ -1,6 +1,7 @@
 import ProjectCard from "../components/OurProject/ProjectCard"
 import ProjectOdd from "../components/OurProject/ProjectOdd"
 
+
 const projects = [
   {
     "id": "1",
